@@ -1,0 +1,15 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/utility";
+@import "base/typography";
+
+@import "components/navbar";
+@import "components/about";
+@import "components/portfolio";
+@import "components/footer";
+@import "components/resume";
+@import "components/hamburgerMenu";

@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
-  filename: "./index.html"
+  filename: "./index.html",
 });
 
 module.exports = {
@@ -12,28 +12,33 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
-        test: /\.css$/,
+        // Loads the javacript into htmsl template provided.
+        // Entry point is set below in HtmlWebPeackPlugin in Plugins
+        test: /\.html$/,
         use: [
           {
-            loader: "style-loader"
+            loader: "html-loader",
+            //options: { minimize: true }
           },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
-        ]
-      }
-    ]
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          "css-loader", // translates CSS into CommonJS,
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
+      },
+    ],
   },
-  plugins: [htmlWebpackPlugin]
+  plugins: [htmlWebpackPlugin],
 };

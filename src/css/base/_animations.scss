@@ -1,0 +1,37 @@
+@keyframes bubbles1 {
+  from {
+    transform: translate(0px, 0px);
+  }
+
+  to {
+    transform: translate(0px, -2rem);
+  }
+}
+@keyframes bubbles2 {
+  from {
+    transform: translate(0px, 0px);
+  }
+
+  to {
+    transform: translate(0px, 2rem);
+  }
+}
+@keyframes bubbles3 {
+  from {
+    transform: translate(0px, 0px);
+  }
+
+  to {
+    transform: translate(0px, -2rem);
+  }
+}
+
+@keyframes aboutBubble {
+  from {
+    transform: translate(0px, 0px);
+  }
+
+  to {
+    transform: translate(0px, -2rem);
+  }
+}

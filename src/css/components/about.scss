@@ -1,0 +1,77 @@
+.About {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  @include respond("tab-port") {
+    flex-direction: column;
+  }
+  &_left {
+    margin-right: 3vw;
+    @include respond("tab-port") {
+      order: 1;
+    }
+    &--circle {
+      opacity: 0.7;
+      height: 50rem;
+      width: 50rem;
+      background: transparent
+        radial-gradient(closest-side at 50% 50%, #d4e21e 0%, #efff0a00 100%) 0%
+        0% no-repeat padding-box;
+      animation: aboutBubble 3s ease-in-out 0s alternate infinite;
+      @include respond("big-desktop") {
+        height: 40rem;
+        width: 40rem;
+      }
+      @include respond("phone") {
+        height: 35rem;
+        width: 35rem;
+      }
+      @include respond("phone") {
+        height: 30rem;
+        width: 30rem;
+      }
+    }
+  }
+  &_right {
+    &--header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      width: 76.5rem;
+      height: 27rem;
+      @include respond("big-desktop") {
+        width: 45.5rem;
+        height: 27rem;
+      }
+      &--background {
+        font-size: 23rem;
+        position: absolute;
+        opacity: 0.08;
+        @include respond("big-desktop") {
+          font-size: 15rem;
+        }
+        @include respond("phone") {
+          font-size: 11rem;
+        }
+        @include respond("phoneXS") {
+          font-size: 9rem;
+        }
+      }
+      &--foreground {
+        font-size: 4.5rem;
+        @include respond("big-desktop") {
+          font-size: 3rem;
+        }
+        @include respond("phone") {
+          font-size: 2.3rem;
+        }
+        @include respond("phoneXS") {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}

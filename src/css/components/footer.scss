@@ -1,0 +1,126 @@
+.Footer {
+  height: 80rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  @include respond("big-desktop") {
+    height: 70rem;
+  }
+  @include respond("tab-land") {
+    height: 60rem;
+  }
+  @include respond("tab-port") {
+    height: 50rem;
+  }
+  @include respond("phone") {
+    height: 40rem;
+  }
+  @include respond("phoneXS") {
+    height: 30rem;
+  }
+  &_circle {
+    font-size: 5rem;
+    color: black;
+    top: 5rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    height: 30rem;
+    width: 30rem;
+    background: transparent
+      radial-gradient(closest-side at 50% 50%, #ffffff 0%, #80808000 100%) 0% 0%
+      no-repeat padding-box;
+    animation: aboutBubble 3s ease-in-out 0s alternate infinite;
+    &:hover {
+      cursor: pointer;
+    }
+    @include respond("tab-land") {
+      height: 20rem;
+      width: 20rem;
+      margin-left: 6rem;
+    }
+    @media screen and (max-width: 795px) {
+      height: 17rem;
+      width: 17rem;
+    }
+    @include respond("phoneXS") {
+      height: 10rem;
+      width: 10rem;
+      font-size: 2rem;
+    }
+  }
+  &_contact {
+    text-align: center;
+    font-size: 3rem;
+    align-self: flex-end;
+    margin: 0px 20vw 7% auto;
+    @include respond("big-desktop") {
+      margin: 0px 20% 7% auto;
+      font-size: 2.5rem;
+    }
+    @media only screen and (max-width: 1575px) {
+      margin: 0px 18% 7% auto;
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: 940px) {
+      margin: 0px 17% 7% auto;
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: 795px) {
+      margin: 0px 16% 2% auto;
+      font-size: 2rem;
+    }
+    @include respond("phone") {
+      margin: 0px 0% 1% auto;
+    }
+
+    &--contact {
+      margin-bottom: 1rem;
+    }
+    &--container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      & > div > a > img {
+        width: 5rem;
+        height: 5rem;
+        @include respond("phoneXS") {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+      & > div {
+        margin-right: 4rem;
+        @include respond("big-desktop") {
+          margin-right: 2rem;
+        }
+        @include respond("phone") {
+          margin-right: 0rem;
+        }
+      }
+      @include respond("phone") {
+        flex-direction: column;
+      }
+    }
+  }
+  &_image {
+    position: absolute;
+    z-index: -1;
+    bottom: -10vw;
+    left: auto;
+    right: auto;
+    margin: 0 auto 0 auto;
+    & > img {
+      width: 70vw;
+      @include respond("phoneXS") {
+        width: 60vw;
+      }
+    }
+  }
+}

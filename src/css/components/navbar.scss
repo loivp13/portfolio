@@ -1,0 +1,73 @@
+.Navbar {
+  position: fixed;
+  width: 100%;
+  transition: 0.5s ease;
+  z-index: 1;
+
+  &_container {
+    background-color: $color-black--light;
+    padding: 0.5rem 9rem 0.5rem 9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @include respond("big-desktop") {
+      padding: 0.5rem 5rem 0.5rem 5rem;
+    }
+    @include respond("tab-port") {
+      padding: 0.05rem 1rem 0.05rem 1rem;
+    }
+    @include respond("phone") {
+      padding: 0.1rem 1rem 0.1rem 1rem;
+    }
+
+    &--right {
+      @include respond("phone") {
+        display: none;
+      }
+    }
+    &--left {
+      font-size: 3rem;
+      @include respond("big-desktop") {
+        font-size: 2.25rem;
+      }
+      @include respond("tab-port") {
+        font-size: 2rem;
+      }
+      &--name {
+        display: flex;
+        align-items: center;
+        font-weight: 100;
+      }
+    }
+    &--close {
+      font-size: 3rem;
+      margin-right: 1rem;
+      display: none;
+      &:hover {
+        cursor: pointer;
+      }
+      @include respond("phone") {
+        display: block;
+      }
+    }
+    &--list {
+      display: flex;
+      & > li {
+        margin-right: 9rem;
+        font-size: 3rem;
+        @include respond("big-desktop") {
+          margin-right: 6rem;
+        }
+        @include respond("tab-port") {
+          margin-right: 3rem;
+        }
+      }
+    }
+  }
+}
+
+//ids
+#loivanpham {
+  word-spacing: 1px;
+}

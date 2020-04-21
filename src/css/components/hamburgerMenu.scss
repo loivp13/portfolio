@@ -1,0 +1,71 @@
+.HamburgerMenu {
+  display: none;
+  @include respond("phone") {
+    display: inline;
+  }
+  &--close {
+    font-size: 3rem;
+    margin-right: 5px;
+    rotate: -90deg;
+    transition: 1s;
+
+    &::before {
+      content: "";
+      width: 3px;
+      height: 20px;
+
+      display: inline-block;
+      border-right: 3px solid white;
+      margin-right: -3px;
+      transform: rotate(45deg);
+    }
+    &::after {
+      content: "";
+      width: 3px;
+      height: 20px;
+      display: inline-block;
+      transform: rotate(-45deg);
+
+      border-right: 3px solid white;
+      margin-right: 5px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &--open {
+    font-size: 3rem;
+    border-right: 3px solid white;
+    margin-right: 5px;
+    transform: rotate(90deg);
+    transition: all 1s;
+    &::before {
+      content: "";
+      border-right: 3px solid white;
+      margin-right: 5px;
+    }
+    &::after {
+      content: "";
+      border-right: 3px solid white;
+      margin-right: 5px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &_container {
+    border-radius: 5px;
+    padding-right: 1rem;
+    width: 25vw;
+    height: 23rem;
+    text-align: right;
+    position: absolute;
+    right: 0rem;
+    bottom: -24rem;
+    font-size: 3rem;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

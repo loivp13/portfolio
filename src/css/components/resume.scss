@@ -1,0 +1,26 @@
+.Resume {
+  position: absolute;
+  z-index: 1;
+  margin: 0rem auto auto 20%;
+  display: flex;
+  transition: all 1s;
+  &--hidden {
+    opacity: 0;
+  }
+  &_pdf {
+    width: 60vw;
+    height: 90vh;
+  }
+  &_button {
+    margin-left: 3rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    font-size: 4rem;
+    color: red;
+    border-radius: 50%;
+    border: 3px solid red;
+    align-self: flex-start;
+    z-index: 2;
+  }
+}
